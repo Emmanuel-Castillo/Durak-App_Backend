@@ -1,0 +1,1 @@
+{"version":3,"file":"room.socket.d.ts","sourceRoot":"","sources":["../../src/room/room.socket.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,MAAM,EAAE,MAAM,EAAE,MAAM,WAAW,CAAC;AAU3C,OAAO,KAAK,EAAE,IAAI,EAAQ,MAAM,gBAAgB,CAAC;AAEjD,wBAAgB,oBAAoB,CAAC,EAAE,EAAE,MAAM,EAAE,MAAM,EAAE,MAAM,QA+C9D;AAED,wBAAgB,eAAe,CAAC,EAAE,EAAE,MAAM,EAAE,IAAI,EAAE,IAAI,QAErD"}
