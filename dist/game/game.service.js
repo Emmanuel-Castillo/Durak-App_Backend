@@ -43,15 +43,17 @@ export function startGame(room) {
     });
     // 5. Assign starting roles for each player 
     newGame.players.forEach((player, index) => {
+        const nextPlayerUserId = (firstAttackerIndex + 1) % newGame.players.length;
         if (index === firstAttackerIndex) {
             player.role = "FirstAttacker";
         }
-        else if (index === (firstAttackerIndex + 1) % newGame.players.length) {
+        else if (index === nextPlayerUserId) {
             player.role = "Defender";
         }
         else {
             player.role = "Attacker";
         }
+        player.nextPlayerUserId = nextPlayerUserId;
     });
     room.game = newGame;
     return room.game;

@@ -12,7 +12,7 @@ export type Player = {
   user: User;
   hand: Card[];
   role: "FirstAttacker" | "Attacker" | "Defender";
-  nextPlayerUserId: string;
+  nextPlayerUserId: number;
 };
 
 export type Game = {

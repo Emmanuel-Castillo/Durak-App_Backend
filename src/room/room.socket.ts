@@ -31,6 +31,7 @@ export function registerRoomHandlers(io: Server, socket: Socket) {
   });
 
   socket.on("disconnect", () => {
+    console.log("Disconnected: ", socket.id)
     const { room, userId } = fetchUserIdAndRoom(socket.id);
     if (!room || !userId) return;
     
