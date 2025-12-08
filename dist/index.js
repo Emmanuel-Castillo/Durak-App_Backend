@@ -7,6 +7,7 @@ const app = express();
 app.use(cors());
 import { registerRoomHandlers } from "./room/room.socket.js";
 import { registerGameHandlers } from "./game/game.socket.js";
+import { v4 as uuidv4 } from "uuid";
 const server = http.createServer(app);
 export const io = new Server(server, {
     cors: { origin: "*" },

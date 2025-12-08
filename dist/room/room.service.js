@@ -25,12 +25,10 @@ export function joinRoom(user, roomName, socketId) {
     }
     if (!room)
         return null;
-    console.log(room.users.length);
     room.users.push({
         ...user,
         socketId,
     });
-    console.log(room.users.length);
     setRoomStates(socketId, user.account_id, room.id);
     return room;
 }

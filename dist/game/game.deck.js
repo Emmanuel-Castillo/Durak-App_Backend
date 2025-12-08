@@ -15,7 +15,8 @@ function createDeck() {
     let deck = [];
     for (let suit of suits) {
         for (let val of values) {
-            deck.push({ suit, value: val.value, rank: val.rank });
+            const cardId = val.value + suit;
+            deck.push({ suit, value: val.value, rank: val.rank, id: cardId });
         }
     }
     return deck;

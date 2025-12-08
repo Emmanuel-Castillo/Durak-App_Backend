@@ -23,17 +23,15 @@ export function createRoom(user: User, roomName: string, socketId: string) {
 }
 
 export function joinRoom(user: User, roomName: string, socketId: string) {
-  let room: Room = rooms.find((r) => r.name === roomName);
+  let room: Room | undefined= rooms.find((r) => r.name === roomName);
   if (room && room.users.length >= 4) {
     room = rooms.find((r) => r.users.length < 4);
   }
   if (!room) return null;
-  console.log(room.users.length)
   room.users.push({
     ...user,
     socketId,
   });
-  console.log(room.users.length)
 
   setRoomStates(socketId, user.account_id, room.id);
   return room;
@@ -43,7 +41,7 @@ export function joinRoom(user: User, roomName: string, socketId: string) {
 export function fetchUserIdAndRoom(socketId: string) {
   const userId = socketUserMap.get(socketId);
   const roomId = socketRoomMap.get(socketId);
-  const room: Room = rooms.find((r) => r.id === roomId);
+  const room = rooms.find((r) => r.id === roomId);
   return { room, userId };
 }
 

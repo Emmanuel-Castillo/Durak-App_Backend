@@ -2,7 +2,7 @@ import type { Room, User } from "./room.type.js";
 export declare function createRoom(user: User, roomName: string, socketId: string): Room;
 export declare function joinRoom(user: User, roomName: string, socketId: string): Room | null;
 export declare function fetchUserIdAndRoom(socketId: string): {
-    room: Room;
+    room: Room | undefined;
     userId: string | undefined;
 };
 export declare function resetRoomStates(socketId: string): void;
